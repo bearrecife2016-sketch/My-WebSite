@@ -1,16 +1,20 @@
 import "dotenv/config";
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
-app.set("views", "./src/views");
+app.set("views", path.join(__dirname, "views"));
 
-app.use(express.static("./src/public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-    res.status(200).render("home");
+    res.render("home");
 });
 
 app.use((req, res) => {
