@@ -17,6 +17,10 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
+app.get("/services", (req,res) => {
+    res.render("services");
+});
+
 app.use((req, res) => {
     res.status(404).send("Página não encontrada");
 });

@@ -1,336 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernando Valério da Silva | Advocacia Especializada</title>
-    
-   <link rel="icon" href="images/favicon-fv-solucoes.webp">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    ...
-
-    <style>
-        /* --- CONFIGURAÇÕES GERAIS --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #0B192C; /* Azul Escuro Institucional */
-            --secondary-color: #1E3E62; /* Azul Médio */
-            --accent-color: #C5A880; /* Dourado Nobre */
-            --text-dark: #222222;
-            --text-light: #F1F1F1;
-            --bg-light: #F9F9F9;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
-        }
-
-        /* --- HEADER & NAVEGAÇÃO --- */
-        header {
-            background-color: var(--primary-color);
-            padding: 20px 10%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: var(--accent-color);
-            font-size: 1.3rem;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(11, 25, 44, 0.85), rgba(11, 25, 44, 0.85)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070') no-repeat center center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            color: var(--text-light);
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero p {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .btn-cta {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
-            padding: 12px 35px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            text-decoration: none;
-        }
-
-        .btn-cta:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            box-shadow: 0 0 15px rgba(197, 168, 128, 0.5);
-        }
-
-        /* --- ÁREAS DE ATUAÇÃO --- */
-        .areas {
-            padding: 100px 10%;
-            text-align: center;
-        }
-
-        .areas h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .separator {
-            width: 80px;
-            height: 3px;
-            background-color: var(--accent-color);
-            margin: 0 auto 50px auto;
-        }
-
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, border-top 0.1s;
-            border-top: 4px solid transparent;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-top: 4px solid var(--accent-color);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .card i {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #060e1a;
-            color: #777;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        /* --- BOTÃO FLUTUANTE DO WHATSAPP --- */
-        .whatsapp-container {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            align-items: center;
-            flex-direction: row-reverse;
-            z-index: 9999;
-            pointer-events: none;
-        }
-
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 35px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            pointer-events: auto;
-        }
-
-        .whatsapp-tooltip {
-            background-color: #1E3E62;
-            color: #ffffff;
-            border-left: 3px solid var(--accent-color);
-            padding: 10px 18px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-right: 15px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(20px);
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            pointer-events: auto;
-        }
-
-        .whatsapp-container:hover .whatsapp-tooltip {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
-        }
-
-        .whatsapp-container:hover .whatsapp-btn {
-            transform: scale(1.1);
-            background-color: #20ba5a;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 2rem; }
-            .whatsapp-tooltip { display: none; }
-        }
-    </style>
+    <title>Fernando Valério da Silva | Advocacia & Consultoria</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="images/icone.webp" type="image/webp">
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">Fernando Valério da Silva</a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#areas">Áreas de Atuação</a></li>
-        </ul>
+    <header class="nav-premium">
+        <div class="nav-container">
+            <a href="/" class="brand">
+                <img src="images/icone.webp" alt="Logo FV" class="logo-premium">
+                <span>FERNANDO VALÉRIO DA SILVA</span>
+            </a>
+            <nav class="links">
+                <a href="/" class="active">Quem Somos</a>
+                <a href="/services">Serviços</a>
+                <a href="https://wa.me/5516981221209" target="_blank" class="btn-nav-contact">Contato</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero" id="home">
-        <h1>Defendendo Seus Direitos com Excelência e Rigor</h1>
-        <p>Advocacia Consultiva e Litigiosa</p>
-        <a href="#" class="btn-cta wpp-redirect">Iniciar Consulta Jurídica</a>
-    </section>
-
-    <section class="areas" id="areas">
-        <h2>Áreas de Especialidade</h2>
-        <div class="separator"></div>
-        <div class="cards-container">
-            <div class="card wpp-redirect">
-                <i class="fa-solid fa-gavel"></i>
-                <h3>Direito Civil</h3>
-                <p>Resolução de conflitos contratuais, posse de bens e assessoria jurídica preventiva complexa.</p>
-            </div>
-            <div class="card wpp-redirect">
-                <i class="fa-solid fa-briefcase"></i>
-                <h3>Direito Empresarial</h3>
-                <p>Blindagem patrimonial, fusões, aquisições e estruturação societária de alta performance.</p>
-            </div>
-            <div class="card wpp-redirect">
-                <i class="fa-solid fa-users"></i>
-                <h3>Direito de Família</h3>
-                <p>Mediação e representação em inventários, divórcios e planejamentos sucessórios familiares.</p>
+    <section class="hero-premium">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <p class="subtitle">ADVOCACIA & CONSULTORIA ADMINISTRATIVA</p>
+            <h1>Fernando Valério da Silva</h1>
+            <hr class="divider">
+            <p class="tagline">Soluções corporativas e civis com rigor técnico, agilidade e excelência operacional.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5516981221209" target="_blank" class="btn-premium">Fale com o Especialista</a>
+                <a href="/services" class="btn-outline">Ver Especialidades</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Fernando Valério da Silva | Advocacia. Todos os direitos reservados. Termos de Uso e Privacidade.</p>
+    <main class="content-container">
+        
+        <section class="about-grid">
+            <div class="about-text-column">
+                <span class="section-label">INSTITUCIONAL</span>
+                <h2>Quem Somos</h2>
+                <p>A <strong>FV Soluções Administrativas</strong> nasceu em 2024 com o propósito de oferecer soluções práticas, ágeis e confiáveis para cidadãos, empreendedores e empresas que precisam de apoio em questões administrativas, documentais e empresariais.</p>
+                <p>Atuamos com foco na excelência do atendimento, buscando simplificar processos, reduzir burocracias e proporcionar mais tranquilidade aos nossos clientes. Nossa missão é oferecer suporte eficiente em diversas demandas do dia a dia, sempre com transparência, responsabilidade e compromisso com os resultados.</p>
+                <p>Com atendimento humanizado e personalizado, trabalhamos para encontrar as melhores soluções para cada situação, auxiliando desde regularizações documentais e questões de trânsito até suporte empresarial, cobranças, negociações e consultoria administrativa.</p>
+            </div>
+            
+            <div class="about-featured-card">
+                <div class="card-overlay"></div>
+                <div class="card-inner-content">
+                    <span class="section-label accent">DIRETRIZ</span>
+                    <h3>Nossa Missão</h3>
+                    <p class="mission-text">
+                        "Facilitar a vida das pessoas e das empresas por meio de soluções administrativas eficientes, acessíveis e seguras."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-premium">
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>&copy; 2026 Fernando Valério da Silva. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://wa.me/5516981221209" target="_blank" class="footer-whatsapp-link">
+                    Atendimento Direto: <strong>(16) 98122-1209</strong>
+                </a>
+            </div>
+        </div>
     </footer>
 
-    <div class="whatsapp-container">
-        <a href="#" id="wppLink" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <div class="whatsapp-tooltip">
-            Que tal ter uma conversa com o especialista?
-        </div>
-    </div>
-
-    <script>
-        // Configuração dinâmica da API do WhatsApp
-        const telefone = "5516981221209"; 
-        const textoOriginal = "Quero conhecer seus serviços!";
-        const textoEncoded = encodeURIComponent(textoOriginal);
-        const urlWhatsapp = `https://wa.me/${telefone}?text=${textoEncoded}`;
-        
-        // Atribui o link ao botão flutuante principal
-        document.getElementById('wppLink').href = urlWhatsapp;
-
-        // Vincula também os outros botões da página (o CTA do Hero e os Cards) para abrirem o WhatsApp
-        const elementosRedirect = document.querySelectorAll('.wpp-redirect');
-        elementosRedirect.forEach(elemento => {
-            elemento.addEventListener('click', (e) => {
-                // Se for o link/botão principal, previne comportamento padrão de <a> vazio
-                if(elemento.tagName === 'A') e.preventDefault(); 
-                window.open(urlWhatsapp, '_blank');
-            });
-        });
-    </script>
 </body>
 </html>
