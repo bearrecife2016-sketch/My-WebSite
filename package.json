@@ -1,0 +1,20 @@
+{
+  "name": "web-fernando",
+  "version": "1.0.0",
+  "description": "Um web-app for Fernando Valério",
+  "main": "src/app.js",
+
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Victor Augusto Gonçalves Valério",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
